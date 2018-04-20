@@ -37,7 +37,10 @@ $(document).ready(function(){
 
     crystal4num = Math.floor(Math.random() * 12) + 1;
 
+
 //assign numbers to images
+
+
 
     $("#crystal1").on("click", function() {
         playerTotal += crystal1num;
@@ -61,9 +64,13 @@ $(document).ready(function(){
 
 //show random number and player total on screen
 
-randNum = $("<h1>").attr("class", "randomNumber");
-$("#randomNum").append(randNum);
+randNumPlace = $("<h1>").attr("class", "randomNumber");
+randNumPlace.append(randNum);
+$("#randomNum").append(randNumPlace);
 
+playerTotalPlace = $("<h1>").attr("class", "playerTotal");
+playerTotalPlace.text(playerTotal);
+$("#playerTotal").append(playerTotalPlace);
 
 
 
