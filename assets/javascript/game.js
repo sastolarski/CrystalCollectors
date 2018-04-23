@@ -24,6 +24,7 @@ var losses = 0;
 
 $(document).ready(function(){
 
+
 //generate all numbers
 
 function numberGen() {
@@ -41,6 +42,8 @@ function numberGen() {
 
     $("#playerTotal").text(playerTotal);
     $("#randomNum").text(randNum);
+    $("#wins").text(wins);
+    $("#losses").text(losses);
 };
 
 numberGen();
@@ -49,12 +52,13 @@ function winLose() {
     if (playerTotal === randNum) {
         alert("You Won!")
         playerTotal = 0;
+        wins++;
         numberGen();
 
     } else if (playerTotal > randNum) {
-
         alert("You Lose!")
         playerTotal = 0;
+        losses++;
         numberGen();
     }
 };
