@@ -26,6 +26,8 @@ $(document).ready(function(){
 
 //generate all numbers
 
+function numberGen() {
+
     randNum = Math.floor(Math.random() * 100) + 19;
         console.log(randNum);
 
@@ -37,41 +39,51 @@ $(document).ready(function(){
 
     crystal4num = Math.floor(Math.random() * 12) + 1;
 
+    $("#playerTotal").text(playerTotal);
+    $("#randomNum").text(randNum);
+};
+
+numberGen();
+
+function winLose() {
+    if (playerTotal === randNum) {
+        alert("You Won!")
+        playerTotal = 0;
+        numberGen();
+
+    } else if (playerTotal > randNum) {
+
+        alert("You Lose!")
+        playerTotal = 0;
+        numberGen();
+    }
+};
 
 //assign numbers to images
 
+$("#crystal1").on("click", function() {
+    playerTotal += crystal1num;
+    $("#playerTotal").text(playerTotal);
+    winLose();
+});
 
+$("#crystal2").on("click", function() {
+    playerTotal += crystal2num;
+    $("#playerTotal").text(playerTotal);
+    winLose();
+});
 
-    $("#crystal1").on("click", function() {
-        playerTotal += crystal1num;
-        console.log(playerTotal);
-    });
+$("#crystal3").on("click", function() {
+    playerTotal += crystal3num;
+    $("#playerTotal").text(playerTotal);
+    winLose();
+});
 
-    $("#crystal2").on("click", function() {
-        playerTotal += crystal2num;
-        console.log(playerTotal);
-    });
-
-    $("#crystal3").on("click", function() {
-        playerTotal += crystal3num;
-        console.log(playerTotal);
-    });
-
-    $("#crystal4").on("click", function() {
-        playerTotal += crystal4num;
-        console.log(playerTotal);
-    });
-
-//show random number and player total on screen
-
-randNumPlace = $("<h1>").attr("class", "randomNumber");
-randNumPlace.append(randNum);
-$("#randomNum").append(randNumPlace);
-
-playerTotalPlace = $("<h1>").attr("class", "playerTotal");
-playerTotalPlace.text(playerTotal);
-$("#playerTotal").append(playerTotalPlace);
-
+$("#crystal4").on("click", function() {
+    playerTotal += crystal4num;
+    $("#playerTotal").text(playerTotal);
+    winLose();
+});
 
 
 
