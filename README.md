@@ -1,2 +1,2 @@
 # CrystalCollectors
-jQuery
+First jQuery homework.  A simple numbers game.
