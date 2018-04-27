@@ -40,8 +40,8 @@ function numberGen() {
 
     crystal4num = Math.floor(Math.random() * 12) + 1;
 
-    $("#playerTotal").text(playerTotal);
-    $("#randomNum").text(randNum);
+    $("#playerTotal").text("Total: " + playerTotal);
+    $("#randomNum").text("Goal: " + randNum);
     $("#wins").text(wins);
     $("#losses").text(losses);
 };
